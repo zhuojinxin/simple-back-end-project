@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>json</title>
+    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+</head>
+<body>
+    json
+    <input type="button" onclick="sendJson()" value="点击">
+</body>
+
+<script>
+    function sendJson() {
+
+       
+        $.ajax({
+            type : "POST",  //提交方式
+            url : "http://localhost/login.php",//路径,www根目录下
+            data : {
+			 "username" : "test",
+    "password" : "XMJ-UCD-2by-Z7a",
+             
+            },//数据，这里使用的是Json格式进行传输
+            success : function(result) {//返回数据根据结果进行相应的处理
+                alert(result);
+            }
+        });
+    }
+</script>
+</html>
